@@ -1,37 +1,14 @@
 ﻿<%@ Page Title="mensual Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="StravaClub._Default" %>
 
         <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-           <link rel="stylesheet" type="text/css" href="Content/bootstrap-theme.css" />
-           <link rel="stylesheet" type="text/css" href="Content/bootstrap.css" />
-           <link rel="stylesheet" type="text/css" href="Content/Site.css" />
-        <script src="http://www.jeasyui.com/easyui/jquery.min.js"></script>
-        <script src="http://www.jeasyui.com/easyui/jquery.easyui.min.js"></script>
 
 
-     <nav      class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Morés</a>
-    </div>
+            <link rel="stylesheet" type="text/css" href="Content/bootstrap-theme.css" />
+            <link rel="stylesheet" type="text/css" href="Content/bootstrap.css" />
+            <link rel="stylesheet" type="text/css" href="Content/Site.css" />
+          
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="ClubInfo.aspx">Club <span class="sr-only">(current)</span></a></li>
-        <li><a href="Default.aspx">Estadíticas</a></li>
-       
-      </ul>
- 
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-    </nav>
+     
         <ul class="nav nav-tabs" role="tablist" id="myTab">
            <li role="presentation"><a href="#club" aria-controls="club" role="tab" data-toggle="tab">Club</a></li>
           <li role="presentation"><a href="#semanal" aria-controls="semanal" role="tab" data-toggle="tab">Semana</a></li>
@@ -46,9 +23,10 @@
                         Style="max-width: 500px">
                         <Columns>
                             <asp:ImageField DataImageUrlField="ProfileMedium" HeaderText=""  ControlStyle-Width="30" ControlStyle-Height = "30"/>
-                            <asp:BoundField DataField="FirstName" HeaderText="Name" />
-                            <asp:BoundField DataField="LastName" HeaderText="Last Name" />
-                            <asp:BoundField DataField="City" HeaderText="Country" />
+                            <asp:BoundField DataField="FirstName" HeaderText="Nombe" />
+                            <asp:BoundField DataField="LastName" HeaderText="Apellidos" />
+                            <asp:BoundField DataField="City" HeaderText="Población" />
+                            <asp:BoundField DataField="CreatedAt" HeaderText="Resgistro"  DataFormatString="{0:d}"/>
                         </Columns>
                 </asp:GridView>
           </div>
