@@ -19,9 +19,12 @@
             })
         </script>
   
+
+
+
   <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d8703.13505293087!2d-1.56837018632577!3d41.474541090530636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1ses!2ses!4v1432633242582" width="100%" height="200" frameborder="0" style="border:0"></iframe>
-          <div role="tabpanel" class="tab-pane" id="club">
-            <span class="label label-warning">Miembros</span>
+          <div role="tabpanel" class="tab-pane" id="club" >
+             
               <asp:GridView ID="gvAthletes" runat="server" CssClass="table table-hover table-striped"  GridLines="None"  AutoGenerateColumns="false"
                         Style="max-width: 500px">
                         <Columns>

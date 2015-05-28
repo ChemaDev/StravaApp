@@ -41,8 +41,6 @@
         <script type="text/javascript">
             $(document).ready(function () {
 
-                debugger;
-                //$("#gvResumenAnual").tablesorter();
                 $("#GridView1").tablesorter();
             });
         </script>
@@ -56,12 +54,35 @@
       
         <div class="tab-content">
           
-          <div role="tabpanel" class="tab-pane active" id="mensual">
+          
+          <div role="tabpanel" class="tab-pane active" id="semanal">
+              <div class="row" id="ResumenSemanal">
+                <div class="col-md-4">
+                   <asp:GridView ID="gvResumenSemanal" runat="server" CssClass="table table-hover table-striped" GridLines="None"  AutoGenerateColumns="false"
+                        Style="max-width: 500px">
+                         <Columns>
+                             <asp:BoundField DataField="Posicion" HeaderText=""  ItemStyle-BackColor="#cccccc" ControlStyle-Width="20" ControlStyle-Height = "20" />
+                            <asp:ImageField DataImageUrlField="ProfileMedium" HeaderText=""   ControlStyle-Width="30" ControlStyle-Height = "30" />
+                             <asp:BoundField DataField="Athlete" HeaderText="Atleta" ItemStyle-Width="100px" />
+                            <asp:BoundField DataField="TotalKms" HeaderText="Total"   DataFormatString="{0:n}" />
+                            <asp:BoundField DataField="KmsRide" HeaderText="Ride"  DataFormatString="{0:n}" />
+                            <asp:BoundField DataField="KmsRun" HeaderText="Running"  DataFormatString="{0:n}"/>
+                            <asp:BoundField DataField="TimeSpent" HeaderText="Tiempo" />
+                        </Columns>
+                    </asp:GridView>
+ 
+                </div>
+      
+            </div>
+
+          </div>
+          <div role="tabpanel" class="tab-pane" id="mensual">
               <div class="row" id="ResumenMes">
                 <div class="col-md-4">
                     <asp:GridView ID="gdResumenMes" runat="server" CssClass="table table-hover table-striped" GridLines="None" AllowSorting="true"  AutoGenerateColumns="false"
                         Style="width:100%">
                         <Columns>
+                            <asp:BoundField DataField="Posicion" HeaderText=""  ItemStyle-BackColor="#cccccc" ControlStyle-Width="20" ControlStyle-Height = "20" />
                             <asp:ImageField DataImageUrlField="ProfileMedium" HeaderText=""  ControlStyle-Width="30" ControlStyle-Height = "30" />
                              <asp:BoundField DataField="Athlete" HeaderText="Atleta" ItemStyle-Width="100px" />
                             <asp:BoundField DataField="TotalKms" HeaderText="Total"  DataFormatString="{0:n}"/>
@@ -76,32 +97,13 @@
                 </div>
 
           </div>
-          <div role="tabpanel" class="tab-pane" id="semanal">
-              <div class="row" id="ResumenSemanal">
-                <div class="col-md-4">
-                   <asp:GridView ID="gvResumenSemanal" runat="server" CssClass="table table-hover table-striped" GridLines="None"  AutoGenerateColumns="false"
-                        Style="max-width: 500px">
-                         <Columns>
-                            <asp:ImageField DataImageUrlField="ProfileMedium" HeaderText=""  ControlStyle-Width="30" ControlStyle-Height = "30" />
-                             <asp:BoundField DataField="Athlete" HeaderText="Atleta" ItemStyle-Width="100px" />
-                            <asp:BoundField DataField="TotalKms" HeaderText="Total"  DataFormatString="{0:n}" />
-                            <asp:BoundField DataField="KmsRide" HeaderText="Ride"  DataFormatString="{0:n}" />
-                            <asp:BoundField DataField="KmsRun" HeaderText="Running"  DataFormatString="{0:n}"/>
-                            <asp:BoundField DataField="TimeSpent" HeaderText="Tiempo" />
-                        </Columns>
-                    </asp:GridView>
- 
-                </div>
-      
-            </div>
-
-          </div>
           <div role="tabpanel" class="tab-pane" id="anual">
             <div class="row" id="ResumenAnual">
                 <div class="col-md-4">
                     <asp:GridView ID="gvResumenAnual" runat="server" CssClass="table table-hover table-striped"  GridLines="None" AllowSorting="true"  AutoGenerateColumns="false"
                         Style="max-width: 500px">
                         <Columns>
+                              <asp:BoundField DataField="Posicion" HeaderText=""  ItemStyle-BackColor="#cccccc" ControlStyle-Width="20" ControlStyle-Height = "20" />
                             <asp:ImageField DataImageUrlField="ProfileMedium" HeaderText="" ControlStyle-Width="30" ControlStyle-Height = "30" ItemStyle-Height="20px" />
                              <asp:BoundField DataField="Athlete" HeaderText="Atleta" ItemStyle-Width="100px" />
                             <asp:BoundField DataField="TotalKms" HeaderText="Total" DataFormatString="{0:n}"/>
@@ -126,16 +128,4 @@
 
         </div>
 
-     <%--   <script>
-            $(function () {
-                $('#myTab a:last').tab('show')
-            })
-        </script>--%>
-
-
-    
-   
-    
-    
-    
 </asp:Content>
